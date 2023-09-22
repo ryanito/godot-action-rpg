@@ -1,0 +1,50 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1695310913
+icon.svg::CompressedTexture2D::4165469163737365955::1682596541::1682596728::1::::<><>::
+world.tscn::PackedScene::131279634616237728::1695310656::0::1::::<><>::uid://ddkq1ll0fdto3::::res://World/GrassBackground.png<>uid://fkxl7k8pxc8a::::res://World/DirtTileset.png<>uid://b6uwha10c4drd::::res://Player/player.tscn<>uid://bgf3k41exwivg::::res://World/bush.tscn<>uid://cy3r3ns8exo67::::res://World/CliffTileset.png<>uid://djv3coro1tdm3::::res://World/grass.tscn<>uid://b73vhdv5ckg16::::res://Enemies/bat.tscn
+::res://Effects/::1695306743
+EnemyDeathEffect.png::CompressedTexture2D::8480974174385529613::1682596915::1682596915::1::::<><>::
+GrassEffect.png::CompressedTexture2D::2856844455083780244::1682596915::1682596915::1::::<><>::
+grass_effect.gd::GDScript::-1::1695217598::0::1::::<>Node2D<>::
+grass_effect.tscn::PackedScene::9134807291701914475::1695306743::0::1::::<><>::res://Effects/grass_effect.gd<>uid://bgx42tjdhw3gy::::res://Effects/GrassEffect.png
+HitEffect.png::CompressedTexture2D::6185901059175164180::1682596915::1682596915::1::::<><>::
+::res://Enemies/::1695310885
+Bat.png::CompressedTexture2D::3033790485471739166::1682596915::1682596915::1::::<><>::
+bat.tscn::PackedScene::4691554006006320539::1695310885::0::1::::<><>::uid://bjhuc6qih6g2i::::res://Enemies/Bat.png<>uid://ci1qps20ychkf::::res://Shadows/SmallShadow.png<>uid://c6m1gdj1aivdc::::res://Hitboxes and Hurtboxes/hurtbox.tscn
+::res://Hitboxes and Hurtboxes/::1695310656
+hitbox.tscn::PackedScene::2656049435845986404::1695310656::0::1::::<><>::
+hurtbox.tscn::PackedScene::6975057582444230780::1695310656::0::1::::<><>::
+::res://Music and Sounds/::1682596915
+EnemyDie.wav::AudioStreamWAV::6709136465812126830::1682596915::1682596915::1::::<><>::
+Evade.wav::AudioStreamWAV::3505042247510329413::1682596915::1682596915::1::::<><>::
+Hit.wav::AudioStreamWAV::7460126121751349869::1682596915::1682596915::1::::<><>::
+Hurt.wav::AudioStreamWAV::1677185743226561063::1682596915::1682596915::1::::<><>::
+Menu Move.wav::AudioStreamWAV::1530602893002488004::1682596915::1682596915::1::::<><>::
+Menu Select.wav::AudioStreamWAV::7840482827389719372::1682596915::1682596915::1::::<><>::
+Music.mp3::AudioStreamMP3::2145283462757224420::1682596915::1682596915::1::::<><>::
+Pause.wav::AudioStreamWAV::7776310306464529182::1682596915::1682596915::1::::<><>::
+Swipe.wav::AudioStreamWAV::6807742276955048844::1682596915::1682596915::1::::<><>::
+Unpause.wav::AudioStreamWAV::811395901058085300::1682596915::1682596915::1::::<><>::
+::res://Player/::1695310656
+Player.gd::GDScript::-1::1695305914::0::1::::<>CharacterBody2D<>::
+Player.png::CompressedTexture2D::3119133698993717937::1682596915::1682596915::1::::<><>::
+player.tscn::PackedScene::4604910707256113913::1695310656::0::1::::<><>::res://Player/Player.gd<>uid://bko6w820ehg7b::::res://Player/Player.png<>uid://bd3u0ms4nmi41::::res://Hitboxes and Hurtboxes/hitbox.tscn
+::res://Shadows/::1682596915
+LargeShadow.png::CompressedTexture2D::7605904473681825978::1682596915::1682596915::1::::<><>::
+MediumShadow.png::CompressedTexture2D::5365871457119996890::1682596915::1682596915::1::::<><>::
+SmallShadow.png::CompressedTexture2D::5389025185186918757::1682596915::1682596915::1::::<><>::
+::res://UI/::1682596915
+HeartUIEmpty.png::CompressedTexture2D::1010597684799874882::1682596915::1682596915::1::::<><>::
+HeartUIFull.png::CompressedTexture2D::4306505497180284451::1682596915::1682596915::1::::<><>::
+::res://World/::1695310656
+Bush2.png::CompressedTexture2D::8158895434625946973::1683214431::1683214432::1::::<><>::
+Bush.png::CompressedTexture2D::8644867218203533100::1682596915::1682596915::1::::<><>::
+bush.tscn::PackedScene::2819595131583525264::1695250667::0::1::::<><>::uid://dvfvx2i45syym::::res://World/Bush.png
+CliffTileset.png::CompressedTexture2D::6516259095034686990::1682596915::1682596915::1::::<><>::
+CreepyTree.png::CompressedTexture2D::3534664484525645219::1683126354::1683126369::1::::<><>::
+DirtTileset.png::CompressedTexture2D::373005828012912434::1682596915::1682596915::1::::<><>::
+grass.gd::GDScript::-1::1695308278::0::1::::<>Node2D<>::
+Grass.png::CompressedTexture2D::1558398576135055874::1682596915::1682596915::1::::<><>::
+grass.tscn::PackedScene::7836017986302289144::1695310656::0::1::::<><>::res://World/grass.gd<>uid://wg5uj8e61fdi::::res://World/Grass.png<>uid://c6m1gdj1aivdc::::res://Hitboxes and Hurtboxes/hurtbox.tscn
+GrassBackground.png::CompressedTexture2D::7391490857952196620::1682596915::1682596915::1::::<><>::
+Tree.png::CompressedTexture2D::5978177052242387167::1682596915::1682596915::1::::<><>::
