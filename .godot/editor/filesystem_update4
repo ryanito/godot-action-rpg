@@ -1,9 +1,0 @@
-res://world.tscn
-res://Player/Player.gd
-res://World/grass.tscn
-res://Player/player.tscn
-res://Hitboxes and Hurtboxes/hurtbox.tscn
-res://Hitboxes and Hurtboxes/hitbox.tscn
-res://Enemies/bat.tscn
-res://Enemies/bat.gd
-res://World/grass.gd
