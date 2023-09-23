@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
-const FRICTION = 5
-const KNOCKBACK_SPEED = 200
+const FRICTION : int = 5
+const KNOCKBACK_SPEED : int = 200
 
 @onready var stats = $Stats
 
