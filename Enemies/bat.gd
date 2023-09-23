@@ -1,9 +1,10 @@
 extends CharacterBody2D
 
-const FRICTION : int = 5
-const KNOCKBACK_SPEED : int = 200
+const FRICTION: int = 5
+const KNOCKBACK_SPEED: int = 200
 
 @onready var stats = $Stats
+
 
 func _physics_process(delta):
 	velocity = lerp(velocity, Vector2.ZERO, FRICTION * delta)

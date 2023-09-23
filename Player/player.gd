@@ -1,21 +1,18 @@
 extends CharacterBody2D
 
-@export var max_speed : int = 80
-@export var roll_speed : int = 120
-@export var acceleration : int = 20
+enum { MOVE, ROLL, ATTACK }
+
+@export var max_speed: int = 80
+@export var roll_speed: int = 120
+@export var acceleration: int = 20
+
+var state = MOVE
+var roll_direction = Vector2.DOWN
 
 @onready var animation_player = $AnimationPlayer
 @onready var animation_tree = $AnimationTree
 @onready var animation_state = animation_tree.get("parameters/playback")
 
-enum {
-	MOVE,
-	ROLL,
-	ATTACK
-}
-
-var state = MOVE
-var roll_direction = Vector2.DOWN
 
 func _ready():
 	animation_tree.active = true
