@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://d3e77amawxwdv"]
 
-[ext_resource type="Script" path="res://Effects/grass_effect.gd" id="1_6gmbm"]
+[ext_resource type="Script" path="res://Effects/effect.gd" id="1_2xi4y"]
 [ext_resource type="Texture2D" uid="uid://bgx42tjdhw3gy" path="res://Effects/GrassEffect.png" id="2_3fyi7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_osn1o"]
@@ -42,17 +42,11 @@ animations = [{
 "texture": SubResource("AtlasTexture_rnhea")
 }],
 "loop": false,
-"name": &"Animate",
+"name": &"default",
 "speed": 15.0
 }]
 
-[node name="GrassEffect" type="Node2D"]
-script = ExtResource("1_6gmbm")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 position = Vector2(-16, -16)
 sprite_frames = SubResource("SpriteFrames_cnt1j")
-animation = &"Animate"
-centered = false
-
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+script = ExtResource("1_2xi4y")
