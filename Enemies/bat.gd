@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-const FRICTION: int = 5
 const KNOCKBACK_SPEED: int = 200
 
 enum {
@@ -18,11 +17,10 @@ var state = CHASE
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var player_detection_zone = $PlayerDetectionZone
 @onready var enemy_death_effect = preload("res://Effects/enemy_death_effect.tscn")
+@onready var hurtbox = $Hurtbox
 
 
 func _physics_process(delta):
-	velocity = lerp(velocity, Vector2.ZERO, FRICTION * delta)
-	
 	match state:
 		IDLE:
 			velocity = Vector2.ZERO
@@ -32,15 +30,15 @@ func _physics_process(delta):
 			pass
 		CHASE:
 			var player = player_detection_zone.player
-			
+
 			if player_detection_zone.can_see_player():
 				var direction = global_position.direction_to(player.global_position)
 				velocity = velocity.move_toward(direction * max_speed, acceleration * delta)
 			else:
 				state = IDLE
-				
+
 			animated_sprite.flip_h = velocity.x < 0
-	
+
 	move_and_slide()
 
 func seek_player():
@@ -51,6 +49,7 @@ func _on_hurtbox_area_entered(area):
 	stats.health -= area.damage
 	var direction = (position - area.owner.position).normalized()
 	velocity = direction * KNOCKBACK_SPEED
+	hurtbox.create_hit_effect()
 
 
 func _on_stats_no_health():

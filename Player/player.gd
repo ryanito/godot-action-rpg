@@ -8,13 +8,17 @@ enum { MOVE, ROLL, ATTACK }
 
 var state = MOVE
 var roll_direction = Vector2.DOWN
+var stats = PlayerStats
 
 @onready var animation_player = $AnimationPlayer
 @onready var animation_tree = $AnimationTree
 @onready var animation_state = animation_tree.get("parameters/playback")
+@onready var hurtbox = $Hurtbox
 
 
 func _ready():
+	stats.no_health.connect(queue_free)
+	
 	animation_tree.active = true
 
 
@@ -87,3 +91,9 @@ func enable_enemy_collision():
 func disable_enemy_collision():
 	set_collision_layer_value(3, false)
 	set_collision_mask_value(5, false)
+
+
+func _on_hurtbox_area_entered(_area):
+	stats.health -= 1
+	hurtbox.start_invincibility(0.5)
+	hurtbox.create_hit_effect()
