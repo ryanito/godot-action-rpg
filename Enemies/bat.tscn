@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://b73vhdv5ckg16"]
+[gd_scene load_steps=18 format=3 uid="uid://b73vhdv5ckg16"]
 
 [ext_resource type="Texture2D" uid="uid://bjhuc6qih6g2i" path="res://Enemies/Bat.png" id="1_3wwr2"]
 [ext_resource type="Script" path="res://Enemies/bat.gd" id="1_ulkp1"]
@@ -58,6 +58,9 @@ radius = 4.0
 radius = 7.58593
 height = 19.592
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_j47pn"]
+radius = 81.77
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_imm5i"]
 radius = 3.82069
 
@@ -93,6 +96,7 @@ max_health = 2
 
 [node name="CollisionShape2D" parent="PlayerDetectionZone" index="0"]
 modulate = Color(1, 1, 1, 0.305882)
+shape = SubResource("CircleShape2D_j47pn")
 
 [node name="Hitbox" parent="." instance=ExtResource("7_iyfh8")]
 collision_layer = 32

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b4ufk2hshrsa"]
+[gd_scene load_steps=15 format=3 uid="uid://b4ufk2hshrsa"]
 
 [ext_resource type="Texture2D" uid="uid://ddkq1ll0fdto3" path="res://World/GrassBackground.png" id="1_6mxtw"]
 [ext_resource type="Texture2D" uid="uid://fkxl7k8pxc8a" path="res://World/DirtTileset.png" id="1_cts2t"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cy3r3ns8exo67" path="res://World/CliffTileset.png" id="3_j17ti"]
 [ext_resource type="PackedScene" uid="uid://djv3coro1tdm3" path="res://World/grass.tscn" id="6_6lb5q"]
 [ext_resource type="PackedScene" uid="uid://b73vhdv5ckg16" path="res://Enemies/bat.tscn" id="7_l8vcg"]
+[ext_resource type="PackedScene" uid="uid://cpfyw7c6twb85" path="res://UI/health_ui.tscn" id="8_pqyxy"]
+[ext_resource type="Script" path="res://UI/health_ui.gd" id="9_tlbbq"]
+[ext_resource type="PackedScene" uid="uid://bxgb2v5gimu1l" path="res://World/tree.tscn" id="10_s48cq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yijyw"]
 texture = ExtResource("1_cts2t")
@@ -857,6 +860,15 @@ y_sort_enabled = true
 [node name="Player" parent="YSort" instance=ExtResource("2_hviho")]
 position = Vector2(112, 24)
 
+[node name="Trees" type="Node2D" parent="YSort"]
+y_sort_enabled = true
+
+[node name="Tree" parent="YSort/Trees" instance=ExtResource("10_s48cq")]
+position = Vector2(96, 160)
+
+[node name="Tree2" parent="YSort/Trees" instance=ExtResource("10_s48cq")]
+position = Vector2(184, 60)
+
 [node name="Bushes" type="Node2D" parent="YSort"]
 y_sort_enabled = true
 
@@ -870,7 +882,7 @@ position = Vector2(24, 120)
 position = Vector2(160, 112)
 
 [node name="Bush4" parent="YSort/Bushes" instance=ExtResource("2_iw650")]
-position = Vector2(200, 29)
+position = Vector2(227, 24)
 
 [node name="Bush5" parent="YSort/Bushes" instance=ExtResource("2_iw650")]
 position = Vector2(296, 136)
@@ -928,3 +940,10 @@ position = Vector2(56, 104)
 
 [node name="Bat2" parent="YSort" instance=ExtResource("7_l8vcg")]
 position = Vector2(224, 168)
+
+[node name="HealthUI" parent="." instance=ExtResource("8_pqyxy")]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 62.0
+offset_bottom = 13.0
+script = ExtResource("9_tlbbq")
