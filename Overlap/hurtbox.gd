@@ -1,26 +1,28 @@
 extends Area2D
 
-const hit_effect = preload("res://Effects/hit_effect.tscn")
-
 signal invincibility_started
 signal invincibility_ended
 
-var invincible : bool = false:
+const HIT_EFFECT = preload("res://Effects/hit_effect.tscn")
+
+var invincible: bool = false:
 	set(value):
 		invincible = value
 		if invincible == true:
 			emit_signal("invincibility_started")
 		else:
 			emit_signal("invincibility_ended")
-			
+
 @onready var timer = $Timer
-			
-func start_invincibility(duration : int):
-	self.invincible = true 
+
+
+func start_invincibility(duration: int):
+	self.invincible = true
 	timer.start(duration)
 
+
 func create_hit_effect():
-	var effect = hit_effect.instantiate()
+	var effect = HIT_EFFECT.instantiate()
 	var main = get_tree().current_scene
 	main.add_child(effect)
 	effect.global_position = global_position
