@@ -17,8 +17,8 @@ var stats = PlayerStats
 
 
 func _ready():
+	randomize()
 	stats.no_health.connect(queue_free)
-	
 	animation_tree.active = true
 
 
