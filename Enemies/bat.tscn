@@ -1,12 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://b73vhdv5ckg16"]
+[gd_scene load_steps=20 format=3 uid="uid://b73vhdv5ckg16"]
 
 [ext_resource type="Texture2D" uid="uid://bjhuc6qih6g2i" path="res://Enemies/Bat.png" id="1_3wwr2"]
 [ext_resource type="Script" path="res://Enemies/bat.gd" id="1_ulkp1"]
 [ext_resource type="Texture2D" uid="uid://ci1qps20ychkf" path="res://Shadows/SmallShadow.png" id="2_m5wm6"]
-[ext_resource type="PackedScene" uid="uid://c6m1gdj1aivdc" path="res://Hitboxes and Hurtboxes/hurtbox.tscn" id="3_cn1sm"]
+[ext_resource type="PackedScene" uid="uid://c6m1gdj1aivdc" path="res://Overlap/hurtbox.tscn" id="3_cn1sm"]
 [ext_resource type="PackedScene" uid="uid://yy0fjmktlb7d" path="res://stats.tscn" id="5_ot146"]
 [ext_resource type="PackedScene" uid="uid://d3yidyvmjma8u" path="res://Enemies/player_detection_zone.tscn" id="6_ddkch"]
-[ext_resource type="PackedScene" uid="uid://bd3u0ms4nmi41" path="res://Hitboxes and Hurtboxes/hitbox.tscn" id="7_iyfh8"]
+[ext_resource type="PackedScene" uid="uid://bd3u0ms4nmi41" path="res://Overlap/hitbox.tscn" id="7_iyfh8"]
+[ext_resource type="PackedScene" uid="uid://cfbw84duecowc" path="res://Overlap/soft_collision.tscn" id="8_q8pp5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wy7ys"]
 atlas = ExtResource("1_3wwr2")
@@ -64,6 +65,9 @@ radius = 81.77
 [sub_resource type="CircleShape2D" id="CircleShape2D_imm5i"]
 radius = 3.82069
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ih7dm"]
+radius = 5.02899
+
 [node name="Bat" type="CharacterBody2D"]
 collision_layer = 0
 script = ExtResource("1_ulkp1")
@@ -106,9 +110,15 @@ collision_mask = 8
 position = Vector2(1.0625, -16)
 shape = SubResource("CircleShape2D_imm5i")
 
+[node name="SoftCollision" parent="." instance=ExtResource("8_q8pp5")]
+
+[node name="CollisionShape2D" parent="SoftCollision" index="0"]
+shape = SubResource("CircleShape2D_ih7dm")
+
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="no_health" from="Stats" to="." method="_on_stats_no_health"]
 
 [editable path="Hurtbox"]
 [editable path="PlayerDetectionZone"]
 [editable path="Hitbox"]
+[editable path="SoftCollision"]

@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const KNOCKBACK_SPEED: int = 200
+const KNOCKBACK_SPEED: int = 175
 
 enum {
 	IDLE,
@@ -18,6 +18,7 @@ var state = CHASE
 @onready var player_detection_zone = $PlayerDetectionZone
 @onready var enemy_death_effect = preload("res://Effects/enemy_death_effect.tscn")
 @onready var hurtbox = $Hurtbox
+@onready var soft_collision = $SoftCollision
 
 
 func _physics_process(delta):
@@ -39,6 +40,9 @@ func _physics_process(delta):
 
 			animated_sprite.flip_h = velocity.x < 0
 
+	if soft_collision.is_colliding():
+		velocity += soft_collision.get_push_vector() * delta * 400
+		
 	move_and_slide()
 
 func seek_player():

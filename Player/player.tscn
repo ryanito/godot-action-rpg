@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Player/player.gd" id="1_pcamj"]
 [ext_resource type="Texture2D" uid="uid://bko6w820ehg7b" path="res://Player/Player.png" id="2_0734i"]
 [ext_resource type="Texture2D" uid="uid://cipjebqvkkaf7" path="res://Shadows/MediumShadow.png" id="2_onxai"]
-[ext_resource type="PackedScene" uid="uid://bd3u0ms4nmi41" path="res://Hitboxes and Hurtboxes/hitbox.tscn" id="3_c4am6"]
-[ext_resource type="PackedScene" uid="uid://c6m1gdj1aivdc" path="res://Hitboxes and Hurtboxes/hurtbox.tscn" id="4_514pu"]
+[ext_resource type="PackedScene" uid="uid://bd3u0ms4nmi41" path="res://Overlap/hitbox.tscn" id="3_c4am6"]
+[ext_resource type="PackedScene" uid="uid://c6m1gdj1aivdc" path="res://Overlap/hurtbox.tscn" id="4_514pu"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a6fce"]
 radius = 3.58961
