@@ -840,7 +840,7 @@ texture_repeat = 2
 position = Vector2(160, 90)
 texture = ExtResource("1_6mxtw")
 region_enabled = true
-region_rect = Rect2(0, 0, 320, 180)
+region_rect = Rect2(0, 0, 640, 640)
 
 [node name="DirtPathTileMap" type="TileMap" parent="."]
 position = Vector2(1, 0)
@@ -854,11 +854,18 @@ cell_quadrant_size = 32
 format = 2
 layer_0/tile_data = PackedInt32Array(1, 131072, 2, -65535, 131072, 0, -65536, 65536, 0, -1, 0, 0, 65535, 0, 2, 0, 65536, 2, 8, 0, 3, 9, 393216, 0, 65545, 0, 2, 65546, 131072, 2, 10, 131072, 0, 262153, 458752, 4, 196617, 196608, 0, 262152, 0, 3, 327689, 262144, 3, 327680, 0, 3, 327681, 65536, 3, 327682, 393216, 3, 262146, 0, 0, 327683, 327680, 3, 262147, 131072, 0, 327684, 131072, 3)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(112, 24)
+position_smoothing_enabled = true
+
 [node name="YSort" type="Node2D" parent="."]
 y_sort_enabled = true
 
 [node name="Player" parent="YSort" instance=ExtResource("2_hviho")]
 position = Vector2(112, 24)
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="YSort/Player"]
+remote_path = NodePath("../../../Camera2D")
 
 [node name="Trees" type="Node2D" parent="YSort"]
 y_sort_enabled = true
@@ -941,7 +948,9 @@ position = Vector2(56, 104)
 [node name="Bat2" parent="YSort" instance=ExtResource("7_l8vcg")]
 position = Vector2(224, 168)
 
-[node name="HealthUI" parent="." instance=ExtResource("8_pqyxy")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="HealthUI" parent="CanvasLayer" instance=ExtResource("8_pqyxy")]
 offset_left = 2.0
 offset_top = 2.0
 offset_right = 62.0
