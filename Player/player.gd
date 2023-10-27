@@ -33,6 +33,14 @@ func _physics_process(_delta):
 		ATTACK:
 			attack_state(_delta)
 
+	var camera = $"../../Camera2D"
+	position.x = clamp(
+		position.x, camera.limit_left + camera.buffer, camera.limit_right - camera.buffer
+	)
+	position.y = clamp(
+		position.y, camera.limit_top + camera.buffer, camera.limit_bottom - camera.buffer
+	)
+
 
 func move_state(_delta):
 	var input_direction = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
