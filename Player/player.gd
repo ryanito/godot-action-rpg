@@ -14,6 +14,8 @@ var stats = PlayerStats
 @onready var animation_tree = $AnimationTree
 @onready var animation_state = animation_tree.get("parameters/playback")
 @onready var hurtbox = $Hurtbox
+@onready var player_hurt_sound = preload("res://Player/player_hurt_sound.tscn")
+@onready var blink_animation_player = $BlinkAnimationPlayer
 
 
 func _ready():
@@ -93,7 +95,18 @@ func disable_enemy_collision():
 	set_collision_mask_value(5, false)
 
 
-func _on_hurtbox_area_entered(_area):
-	stats.health -= 1
-	hurtbox.start_invincibility(0.5)
+func _on_hurtbox_area_entered(area):
+	stats.health -= area.damage
+	hurtbox.start_invincibility(0.6)
 	hurtbox.create_hit_effect()
+
+	var instance = player_hurt_sound.instantiate()
+	$"..".add_child(instance)
+
+
+func _on_hurtbox_invincibility_started():
+	blink_animation_player.play("blink")
+
+
+func _on_hurtbox_invincibility_ended():
+	blink_animation_player.stop()

@@ -16,6 +16,7 @@ var state = CHASE
 @onready var hurtbox = $Hurtbox
 @onready var soft_collision = $SoftCollision
 @onready var wander_controller = $WanderController
+@onready var animation_player = $AnimationPlayer
 
 
 func _physics_process(delta):
@@ -76,6 +77,7 @@ func _on_hurtbox_area_entered(area):
 	var direction = (position - area.owner.position).normalized()
 	velocity = direction * KNOCKBACK_SPEED
 	hurtbox.create_hit_effect()
+	hurtbox.start_invincibility(0.4)
 
 
 func _on_stats_no_health():
@@ -83,3 +85,11 @@ func _on_stats_no_health():
 	var instance = enemy_death_effect.instantiate()
 	$"..".add_child(instance)
 	instance.global_position = global_position
+
+
+func _on_hurtbox_invincibility_started():
+	animation_player.play("blink")
+
+
+func _on_hurtbox_invincibility_ended():
+	animation_player.stop()
